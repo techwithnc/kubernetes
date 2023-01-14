@@ -1,3 +1,5 @@
+# Deployment for creating Cluster IP on default namespace.
+
 apiVersion: v1
 kind: Service
 metadata:

@@ -1,4 +1,4 @@
-# Create deployment for nginx .
+# Deployment for my sample web on ns02 namespace.
 
 apiVersion: apps/v1
 kind: Deployment

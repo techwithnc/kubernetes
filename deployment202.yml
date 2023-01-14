@@ -1,3 +1,6 @@
+# Deployment for my sample web image on ns02 namespace.
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
