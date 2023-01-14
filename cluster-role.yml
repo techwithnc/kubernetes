@@ -1,0 +1,12 @@
+# create cluster role
+kubectl create clusterrole dev-cr --verb=get,list,create,update,delete --resource=deployments.apps,pods --dry-run=client -o yaml > dev-cr.yaml
+kubectl apply -f dev-cr.yaml
+# kubectl get clusterrole
+# kubectl describe clusterrole dev-cr
+
+# crate clusterrolebinding 
+kubectl create clusterrolebinding dev-crb --clusterrole=dev-cr --user=nc --dry-run=client -o yaml > dev-crb.yaml
+kubectl apply -f dev-crb.yaml
+# kubectl describe clusterrolebinding dev-crb
+# kubectl auth can-i create pod --as nc
+# kubectl auth can-i get node --as nc

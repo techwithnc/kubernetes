@@ -1,0 +1,28 @@
+# Create deployment for nginx .
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dpm02
+  namespace: ns02
+  labels:
+    app: test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+      - name: mypod
+        image: techwithnc/sampleweb:3.0
+        resources:
+          limits:
+            memory: "32Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 80

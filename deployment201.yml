@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy201
+  namespace: ns02
+  labels:
+    lbl: lbl201
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      lbl: lbl201
+  template:
+    metadata:
+      labels:
+        lbl: lbl201
+    spec:
+      containers:
+      - name: mypod
+        image: nginx:latest
+        resources:
+          limits:
+            memory: "32Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 80

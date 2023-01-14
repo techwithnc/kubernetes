@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc01
+  namespace: ns01
+spec:
+  type: NodePort
+  selector:
+    lbl: lbl101
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
