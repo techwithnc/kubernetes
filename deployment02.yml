@@ -4,11 +4,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dpm02
-  namespace: ns02
+  namespace: default
   labels:
     app: test
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: test
@@ -19,10 +19,10 @@ spec:
     spec:
       containers:
       - name: mypod
-        image: techwithnc/sampleweb:3.0
+        image: nginx:latest
         resources:
           limits:
-            memory: "32Mi"
             cpu: "100m"
+            memory: "32Mi"
         ports:
         - containerPort: 80
