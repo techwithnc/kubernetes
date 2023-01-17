@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: mypod
-        image: techwithnc/sampleweb:1.0
+        image: techwithnc/sampleweb:3.0
         resources:
           limits:
             memory: "512Mi"
