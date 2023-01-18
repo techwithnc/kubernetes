@@ -9,7 +9,7 @@ metadata:
   labels:
     lbl: lbl101
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       lbl: lbl101
@@ -23,7 +23,7 @@ spec:
         image: techwithnc/sampleweb:1.0
         resources:
           limits:
-            memory: "512Mi"
-            cpu: "500m"
+            memory: "32Mi"
+            cpu: "100m"
         ports:
         - containerPort: 80
