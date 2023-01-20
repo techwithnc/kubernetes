@@ -1,9 +1,9 @@
-# Deployment for my sample web on ns02 namespace.
+# Deployment for my sample web image on default namespace.
 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dpm02busybox
+  name: dpm03nginx
   namespace: default
   labels:
     app: test
@@ -18,13 +18,13 @@ spec:
         app: test
     spec:
       nodeSelector:
-        name: minikube
+        name: minikube-m02
       containers:
       - name: mypod
-        image: techwithnc/busybox:1.0
+        image: nginx
         resources:
           limits:
-            cpu: "100m"
             memory: "32Mi"
+            cpu: "100m"
         ports:
         - containerPort: 80

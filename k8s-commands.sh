@@ -11,6 +11,7 @@
 #sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 #sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
+# kubectl label node minikube name=minikube  // Add label to node
 # netstat -tunlp 
 # Namespaces
 # kubectl get namespace / ns
