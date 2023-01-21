@@ -3,12 +3,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dpm01nginx
+  name: dpm01
   namespace: default
   labels:
     app: test
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: test
@@ -17,14 +17,14 @@ spec:
       labels:
         app: test
     spec:
-      nodeSelector:
-        name: minikube
+      # nodeSelector:
+      #   name: minikube
       containers:
       - name: mypod
-        image: nginx
+        image: techwithnc/nodejs:1.0
         resources:
           limits:
             memory: "32Mi"
             cpu: "100m"
         ports:
-        - containerPort: 80
+        - containerPort: 3000

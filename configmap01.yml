@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cfm01
+  namespace: default
+data:
+  name: Aung Nyein Chan Oo
+  position: IT Supervisor

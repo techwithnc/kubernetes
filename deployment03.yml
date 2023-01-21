@@ -3,12 +3,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dpm03nginx
+  name: dpm03
   namespace: default
   labels:
     app: test
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: test
@@ -18,7 +18,7 @@ spec:
         app: test
     spec:
       nodeSelector:
-        name: minikube-m02
+        name: minikube
       containers:
       - name: mypod
         image: nginx
