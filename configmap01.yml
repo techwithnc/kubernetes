@@ -4,5 +4,5 @@ metadata:
   name: cfm01
   namespace: default
 data:
-  name: Aung Nyein Chan Oo
-  position: IT Supervisor
+  company-name: KBZBANK
+  company-address: Yangon

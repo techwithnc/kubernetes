@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cfm03
+data:
+  mydata.conf: |
+    [personal]
+    name=aungnyeinchanoo
+    dob=14491
+    age=31years
+    fathername=uausaung

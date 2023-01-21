@@ -3,12 +3,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dpm04busybox
+  name: dpm04
   namespace: default
   labels:
     app: test
 spec:
-  replicas: 1
+  replicas: 
   selector:
     matchLabels:
       app: test
@@ -17,14 +17,20 @@ spec:
       labels:
         app: test
     spec:
-      nodeSelector:
-        name: minikube-m02
       containers:
       - name: mypod
-        image: techwithnc/busybox:1.0
-        resources:
-          limits:
-            memory: "32Mi"
-            cpu: "100m"
-        ports:
-        - containerPort: 80
+        image: nginx
+        command: ['sh', '-c', "cat /home/file01/mydata.conf; cat /home/file02/companydata.conf; sleep 30"]
+        volumeMounts:
+          - mountPath: /home/file01
+            name: vol01
+          - name: vol02
+            mountPath: /home/file02
+            readOnly: true
+        volumes:
+        - name: vol01
+          configMap:
+            name: mydata.conf
+        - name: vol02
+          secret:
+            secretName: companydata.conf
