@@ -3,9 +3,9 @@ kind: ConfigMap
 metadata:
   name: cfm01
 data:
-  filename01.txt: |
-    this is content of the filename01.txt
-    hi hello
-    nice to meet you
-    how are you.
+  File01.txt: |
+    This is content of the file.
+    Hi hello.
+    Nice to meet you!
+    How are you.
 
