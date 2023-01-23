@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cfm01
+data:
+  filename01.txt: |
+    this is content of the filename01.txt
+    hi hello
+    nice to meet you
+    how are you.
+

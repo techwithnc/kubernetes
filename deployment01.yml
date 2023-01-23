@@ -6,25 +6,25 @@ metadata:
   name: dpm01
   namespace: default
   labels:
-    app: test
+    app: nginx
 spec:
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
-      app: test
+      app: nginx
   template:
     metadata:
       labels:
-        app: test
+        app: nginx
     spec:
       # nodeSelector:
       #   name: minikube
       containers:
       - name: mypod
-        image: techwithnc/nodejs:1.0
+        image: nginx
         resources:
           limits:
             memory: "32Mi"
             cpu: "100m"
         ports:
-        - containerPort: 3000
+        - containerPort: 80
