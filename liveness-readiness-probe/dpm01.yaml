@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dpm01
+  namespace: default
+  labels:
+    app: myapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: techwithnc/sampleweb:1.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          periodSeconds: 5
+          initaialDelaySeconds: 5
+          timeoutSeconds: 1
+        readinessProbe:
+          tcpSocket:
+            port: 80
+          periodSeconds: 5
+          
+
+
+
+        
