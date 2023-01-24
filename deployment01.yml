@@ -8,7 +8,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: nginx
@@ -21,10 +21,10 @@ spec:
       #   name: minikube
       containers:
       - name: mypod
-        image: nginx
+        image: techwithnc/sampleweb:1.0
         resources:
           limits:
-            memory: "32Mi"
-            cpu: "100m"
+            memory: "128Mi"
+            cpu: "300m"
         ports:
         - containerPort: 80

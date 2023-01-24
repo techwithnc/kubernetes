@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mydb-service
+  name: svc01
   namespace: default
 spec:
   selector:
