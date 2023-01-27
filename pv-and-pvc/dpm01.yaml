@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dpm01
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: busybox:latest
+        command: ["sh", "-c", "sleep 36000"]
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        volumeMounts:
+          - name: vol01
+            mountPath: /dir01/    
+      volumes:
+        - name: vol01
+          persistentVolumeClaim:
+            claimName: pvc01

@@ -34,8 +34,3 @@ spec:
           tcpSocket:
             port: 80
           periodSeconds: 5
-          
-
-
-
-        
