@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: dev
+  name: websvr
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: websvr
+  template:
+    metadata:
+      labels:
+        app: websvr
+    spec:
+      containers:
+      - name: websvr
+        image: nginx:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 80
