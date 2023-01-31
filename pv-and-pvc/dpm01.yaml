@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: ns01
   name: dpm01
 spec:
   selector:

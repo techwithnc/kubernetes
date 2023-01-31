@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sidecarctn01
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+          - containerPort: 80
+        resources:
+          limits:
+            memory: "32Mi"
+            cpu: "100m"
+      - name: log-sidecar
+        image: busybox:latest
+        command: ['sh', '-c', "while true;do echo sysnc app logs; sleep 20; done"]
+        resources:
+          limits:
+            memory: "32Mi"
+            cpu: "100m"
+      - name: mybusybox
+        image: techwithnc/busybox:1.0
+        command: ['sh', '-c', "while true;do echo sysnc app logs; sleep 20; done"]
+        resources:
+          limits:
+            memory: "32Mi"
+            cpu: "100m"

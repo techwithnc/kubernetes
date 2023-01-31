@@ -9,6 +9,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Recycle
-  storageClassName: slow
+  storageClassName: scn01
   hostPath:
-    path: /var/mydir
+    path: /tmp/pv01
