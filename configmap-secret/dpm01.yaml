@@ -1,0 +1,87 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dpm01
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: busybox:latest
+        command: ["sh", "-c", "sleep 4000"]
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        env:
+          - name: MY_NAME
+            valueFrom:
+              configMapKeyRef:
+                name: cfm01
+                key: name
+          - name: MY_DEPARTMENT
+            valueFrom:
+              configMapKeyRef:
+                name: cfm01
+                key: department
+          - name: MY_DOB
+            valueFrom:
+              configMapKeyRef:
+                name: cfm01
+                key: dob
+          - name: MY_ADDRESS
+            valueFrom:
+              configMapKeyRef:
+                name: cfm01
+                key: address
+          - name: MY_WIFE_NAME
+            valueFrom:
+              configMapKeyRef:
+                name: cfm02
+                key: name
+          - name: MY_WIFE_DEPARTMENT
+            valueFrom:
+              configMapKeyRef:
+                name: cfm02
+                key: department
+          - name: MY_WIFE_ADDRESS
+            valueFrom:
+              configMapKeyRef:
+                name: cfm02
+                key: address
+          - name: MY_SALARY
+            valueFrom:
+              secretKeyRef:
+                name: sct01
+                key: salary
+          - name: MY_KEY
+            valueFrom:
+              secretKeyRef:
+                name: sct01
+                key: key
+          - name: MY_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: sct01
+                key: token
+          - name: MY_WIFE_SALARY
+            valueFrom:
+              secretKeyRef:
+                name: sct02
+                key: salary
+          - name: MY_WIFE_KEY
+            valueFrom:
+              secretKeyRef:
+                name: sct02
+                key: key
+          - name: MY_WIFE_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: sct02
+                key: token
