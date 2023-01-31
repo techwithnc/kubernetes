@@ -5,7 +5,4 @@ metadata:
 type: Opaque
 data:
   password.file: |
-    bGluZTAxID4+IHBhc3N3b3JkIDAx
-    bGluZTAyID4+IHBhc3N3b3JkIDAy
-    bGluZTAzID4+IHBhc3N3b3JkIDAz
-    dGhpcyBpcyBteSBwYXNzd29yZHMgZm9yIGFsbA==
+    dGhpcyBpcyBteSBmYiBwYXNzd29yZC4KdGhpcyBpcyBteSBnb29nbGUgcGFzc3dvcmQuCnRoaXMgaXMgbXkgdHdpdHRlciBwYXNzd29yZC4KdGhpcyBpcyBteSBub3J0b24gcGFz
