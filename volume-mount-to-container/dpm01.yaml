@@ -34,6 +34,9 @@ spec:
         - name: vol01
           configMap:
             name: cfm01
+            items:
+              - key: "file01.txt"
+                path: "01file.txt"
         - name: vol02
           secret:
             secretName: sct01
