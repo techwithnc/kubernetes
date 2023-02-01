@@ -27,6 +27,7 @@ spec:
         volumeMounts:
           - mountPath: /home/configmap01
             name: vol01
+            readOnly: true
           - mountPath: /home/secret01
             name: vol02
             readOnly: true
