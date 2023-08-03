@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: cfm01
+  name: cm01
 data:
   name: Tech With NC
   department: IT department

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dpm01
+  name: deploy01
   namespace: default
   labels:
     app: myapp
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: nginx:latest
+        image: techwithnc/nginx:3.0
         resources:
           limits:
             memory: "128Mi"
@@ -28,36 +28,36 @@ spec:
           - name: NAME
             valueFrom:
               configMapKeyRef:
-                name: cfm01
+                name: cm01
                 key: name
           - name: ADDRESS
             valueFrom:
               configMapKeyRef:
-                name: cfm01
+                name: cm01
                 key: address
           - name: DEPARTMENT
             valueFrom:
               configMapKeyRef:
-                name: cfm01
+                name: cm01
                 key: department
           - name: BANK_ID
             valueFrom:
               secretKeyRef:
-                name: sct01
+                name: secret01
                 key: bank-id
           - name: SALARY
             valueFrom:
               secretKeyRef:
-                name: sct01
+                name: secret01
                 key: salary
           - name: PASSWORD
             valueFrom:
               secretKeyRef:
-                name: sct01
+                name: secret01
                 key: password
           - name: TOKEN
             valueFrom:
               secretKeyRef:
-                name: sct01
+                name: secret01
                 key: token
           
