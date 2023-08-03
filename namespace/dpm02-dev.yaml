@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: test
-  name: deploy01-test-ns
+  namespace: dev
+  name: deploy02-dev-ns
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: myweb
+      app: websvr02
   template:
     metadata:
       labels:
-        app: myweb
+        app: websvr02
     spec:
       containers:
-      - name: myweb
-        image: techwithnc/sampleweb:1.0
+      - name: websvr
+        image: techwithnc/nginx:4.0
         resources:
           limits:
             memory: "128Mi"

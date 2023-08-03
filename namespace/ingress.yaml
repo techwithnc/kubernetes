@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress01
+  namespace: dev
+spec:
+  rules:
+  - host: aungnyeinchanoo.com
+    http:
+      paths:
+      - pathType: Exact
+        path: /svc01
+        backend:
+          service:
+            name: svc01-dev-ns
+            port:
+              number: 3001

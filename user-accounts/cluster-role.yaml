@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  # "namespace" omitted since ClusterRoles are not namespaced
+  name: clsrol01
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "create", "list", "update", "delete"]
+# - apiGroups: ["apps"]
+#   resources: ["deployments", "statefullSets"]
+#   verbs: ["get", "create", "list"]
+ 

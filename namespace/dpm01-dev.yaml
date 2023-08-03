@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: dev
-  name: websvr
+  name: deploy01-dev-ns
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: websvr
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: websvr
-        image: nginx:latest
+        image: techwithnc/nginx:3.0
         resources:
           limits:
             memory: "128Mi"

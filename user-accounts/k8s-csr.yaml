@@ -1,0 +1,10 @@
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  name: nyeinchan
+spec:
+  request: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlHa01GZ0NBUUF3SlRFU01CQUdBMVVFQXd3SmJubGxhVzVqYUdGdU1ROHdEUVlEVlFRS0RBWjFjMlZ5WjNBdwpLakFGQmdNclpYQURJUUNHbzluNk5nTUdJS0JneVkrd2FTSmgxL3JUZTZEb3NKd2dwMjhrZDR1YmRxQUFNQVVHCkF5dGxjQU5CQUsvS1QrR0ZlRkc3bHZWQkRtTE5JSnR6dFpmZkJ3V29qazJWMEowNHhuNkF0TnlLVGswY3pWT2UKWHVFbjd6dlZzenJ3ZmdoQ0JhYVIvd0lqTHNuU1dRWT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUgUkVRVUVTVC0tLS0tCg==
+  signerName: kubernetes.io/kube-apiserver-client
+  expirationSeconds: 8640000  
+  usages:
+  - client auth
