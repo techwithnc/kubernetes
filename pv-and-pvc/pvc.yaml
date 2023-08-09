@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  namespace: ns01
+  namespace: dev
   name: pvc01
 spec:
   resources:
