@@ -17,11 +17,11 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: nginx:latest
+        image: techwithnc/nginx:3.0
         resources:
           limits:
             memory: "128Mi"
-            cpu: "500m"
+            cpu: "100m"
         ports:
         - containerPort: 80
         volumeMounts:
@@ -34,13 +34,13 @@ spec:
       volumes:
         - name: vol01
           configMap:
-            name: cfm01
+            name: cm01
             items:
               - key: "file01.txt"
                 path: "01file.txt"
         - name: vol02
           secret:
-            secretName: sct01
+            secretName: secret01
       
       
 
