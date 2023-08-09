@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: cfm01
+  name: cm01
 data:
   name: Aung Nyein Chan Oo
   department: IT department
